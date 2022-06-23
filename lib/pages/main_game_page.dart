@@ -8,8 +8,27 @@ class GamePage extends HookConsumerWidget {
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
-    return GameWidget(
-      game: ref.watch(gameProvider),
+    return MaterialApp(
+      home: Scaffold(
+        backgroundColor: Colors.grey,
+        body: Center(
+          child: Column(
+            children: [
+              const Padding(
+                padding: EdgeInsets.all(8.0),
+                child: Text('Yosano vs Dice'),
+              ),
+              SizedBox(
+                width: 300,
+                height: 300,
+                child: GameWidget(
+                  game: ref.watch(gameProvider),
+                ),
+              ),
+            ],
+          ),
+        ),
+      ),
     );
   }
 }
