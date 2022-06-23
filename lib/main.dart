@@ -1,18 +1,9 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_yosano_vs_dice/pages/main_game_page.dart';
+import 'package:hooks_riverpod/hooks_riverpod.dart';
 
 void main() {
-  runApp(const MyApp());
-}
-
-class MyApp extends StatelessWidget {
-  const MyApp({super.key});
-
-  @override
-  Widget build(BuildContext context) {
-    return Container(
-      width: 100,
-      height: 100,
-      color: Colors.blue[100],
-    );
-  }
+  runApp(const ProviderScope(
+    child: GamePage(),
+  ));
 }
